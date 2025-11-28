@@ -11,7 +11,6 @@ class Fluid:
                  bo: list,
                  u_o: list,
                  pb: float,
-                 **kwargs
                  ):
 
         p_raw = np.array(pressures, dtype=float)
