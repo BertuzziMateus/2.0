@@ -1,0 +1,6 @@
+cupy 
+numpy
+scipy 
+matplotlib
+pvista
+pandas
