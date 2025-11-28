@@ -2,5 +2,5 @@ cupy
 numpy
 scipy 
 matplotlib
-pvista
+pyvista
 pandas
