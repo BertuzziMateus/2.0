@@ -1,7 +1,8 @@
 from engine_grid import *
 from engine_properties import *
 from engine_fluid import *
-
+from engine_reservoir import *
+from engine_simulation import *
 
 # nt = 81*58*20
 
@@ -46,16 +47,32 @@ from engine_fluid import *
 
 pvt = Fluid.from_file('pvt_campo.csv', bubble_point = 190.0)
 
-print(pvt.pb)
-
 grid = StructuredGrid.from_file('grid.txt')
 
 properties = ReservoirProperties.from_file('petro.INC')
 
+field_ = Field(grid, properties, pvt,5.4045e-5)
 
 
-print(pvt.get_pvt_properties(500))
-properties.validate_with_grid(grid)
+sim = SimulationEngine(
+    field_,
+    [],
+    1000,
+    1,
+)
+
+
+
+
+
+
+
+
+P = sim.simulate(P0=200)   # pressão inicial em kgf/cm2
+print(P)
+
+# print(pvt.get_pvt_properties(500))
+# properties.validate_with_grid(grid)
 # print("Simulação pronta para iniciar.")
-a =1
+
 
